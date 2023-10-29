@@ -5,7 +5,7 @@ import (
 	"io"
 	"path/filepath"
 
-	"github.com/shimberger/gohls/internal/worker"
+	"github.com/shokohsc/gohls/internal/worker"
 )
 
 var encodeWorker = worker.NewWorkerServer(worker.WorkerServerConf{
@@ -51,7 +51,7 @@ func EncodingArgs(videoFile string, segment int64, res int64) []string {
 		// Synchronize audio
 		"-async", "1",
 
-		// 720p
+		// 1080p
 		"-vf", fmt.Sprintf("scale=-2:%v", res),
 
 		// x264 video codec

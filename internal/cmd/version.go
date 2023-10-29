@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/shimberger/gohls/internal/buildinfo"
+	"github.com/shokohsc/gohls/internal/buildinfo"
 	"github.com/spf13/cobra"
 )
 

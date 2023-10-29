@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"github.com/shimberger/gohls/internal/hls"
+	"github.com/shokohsc/gohls/internal/hls"
 	log "github.com/sirupsen/logrus"
 )
 

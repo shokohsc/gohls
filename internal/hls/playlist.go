@@ -23,7 +23,7 @@ func WritePlaylist(urlTemplate string, file string, w io.Writer) error {
 			Resolution int64
 			Segment    int
 		}{
-			720,
+			1080,
 			segmentIndex,
 		})
 		return buf.String()

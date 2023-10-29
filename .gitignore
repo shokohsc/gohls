@@ -1,12 +1,12 @@
 .gohls
+gohls
 .DS_Store
 .sass-cache
 .gohls-data
 /build
-ui/src/build
-node_modules
-videos
+ui/build/
+ui/node_modules/
 buildinfo.go
 rice-box.go
 LOCAL_NOTES.txt
-gohls-config.json
+./gohls-config.json

@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/shimberger/gohls/internal/hls"
+	"github.com/shokohsc/gohls/internal/hls"
 	"github.com/spf13/cobra"
 )
 

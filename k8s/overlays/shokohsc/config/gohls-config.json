@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "/mnt/tvshows",
+			"title": "tvshows"
+		},
+		{
+			"path": "/mnt/movies",
+			"title": "movies"
+		}
+	]
+}

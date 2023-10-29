@@ -1,0 +1,24 @@
+FROM jrottenberg/ffmpeg:4.1-scratch as ffmpeg
+
+FROM cosmtrek/air
+
+ARG SKAFFOLD_GO_GCFLAGS
+ENV GOTRACEBACK=single
+
+# RUN mkdir -p /.cache/go-build && chmod -R 0755 /.cache && chown -R 1000:1000 /.cache
+
+WORKDIR /app
+ENV air_wd /app
+
+COPY . .
+COPY --from=ffmpeg /bin/ffmpeg /usr/bin/ffmpeg
+COPY --from=ffmpeg /bin/ffprobe /usr/bin/ffprobe
+
+# USER 1000:1000
+
+# root@54f414860569:/app# history
+#     1  apt update
+#     2  apt install -y git ffmpeg nodejs npm
+#     3  cd ui/ && npm install && npm run build && cd ..
+#     4  #./scripts/run.sh serve
+#     5  history

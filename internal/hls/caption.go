@@ -4,7 +4,7 @@ import (
 	"io"
 	"path/filepath"
 
-	"github.com/shimberger/gohls/internal/worker"
+	"github.com/shokohsc/gohls/internal/worker"
 )
 
 var captionWorker = worker.NewWorkerServer(worker.WorkerServerConf{

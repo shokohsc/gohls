@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/shimberger/gohls/internal/cmdutil"
+	"github.com/shokohsc/gohls/internal/cmdutil"
 	log "github.com/sirupsen/logrus"
 )
 

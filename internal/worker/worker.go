@@ -6,7 +6,7 @@ import (
 	"io"
 	"path/filepath"
 
-	"github.com/shimberger/gohls/internal/cache"
+	"github.com/shokohsc/gohls/internal/cache"
 	log "github.com/sirupsen/logrus"
 )
 

@@ -1,7 +1,7 @@
 package api
 
 import (
-	"github.com/shimberger/gohls/internal/hls"
+	"github.com/shokohsc/gohls/internal/hls"
 	"net/http"
 	"strconv"
 )

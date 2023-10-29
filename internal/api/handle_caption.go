@@ -3,7 +3,7 @@ package api
 import (
 	"net/http"
 
-	"github.com/shimberger/gohls/internal/hls"
+	"github.com/shokohsc/gohls/internal/hls"
 )
 
 func handleCaption(w http.ResponseWriter, r *http.Request) {

@@ -1,7 +1,7 @@
 # Golang HLS Streamer
 
-[![GitHub Actions: Build, and may release a new snapshot](https://github.com/shimberger/gohls/actions/workflows/build_and_release_snapshot.yml/badge.svg)](https://github.com/shimberger/gohls/actions/workflows/build_and_release_snapshot.yml) 
-[![GoDoc](https://godoc.org/github.com/shimberger/gohls?status.svg)](https://godoc.org/github.com/shimberger/gohls)  
+[![GitHub Actions: Build, and may release a new snapshot](https://github.com/shokohsc/gohls/actions/workflows/build_and_release_snapshot.yml/badge.svg)](https://github.com/shokohsc/gohls/actions/workflows/build_and_release_snapshot.yml) 
+[![GoDoc](https://godoc.org/github.com/shokohsc/gohls?status.svg)](https://godoc.org/github.com/shokohsc/gohls)  
 
 Simple server that exposes a directory for video streaming via HTTP Live Streaming (HLS). Uses ffmpeg for transcoding.
 
@@ -13,7 +13,7 @@ Simple server that exposes a directory for video streaming via HTTP Live Streami
 
 ### 1. Download the binary for your operating system
 
-You can find the latest release on the releases page [https://github.com/shimberger/gohls/releases](https://github.com/shimberger/gohls/releases) or just download a current snapshot:
+You can find the latest release on the releases page [https://github.com/shokohsc/gohls/releases](https://github.com/shokohsc/gohls/releases) or just download a current snapshot:
 
 - [Windows (64 bit)](https://s3.amazonaws.com/gohls/gohls-windows-amd64-snapshot.tar.gz)
 - [Linux (64 bit)](https://s3.amazonaws.com/gohls/gohls-linux-amd64-snapshot.tar.gz)
@@ -63,7 +63,7 @@ Visit the URL [http://127.0.0.1:8080](http://127.0.0.1:8080) to access the web i
 
 ### Initial setup
 
-1. Clone the repository `git@github.com:shimberger/gohls.git`
+1. Clone the repository `git@github.com:shokohsc/gohls.git`
 2. Build frontend `cd ui/ && npm install && npm run build && cd ..`
 
 ### Running server
@@ -72,4 +72,4 @@ To then run the development server execute: `./scripts/run.sh serve`
 
 ## License
 
-See [LICENSE.txt](https://github.com/shimberger/gohls/blob/master/LICENSE.txt)
+See [LICENSE.txt](https://github.com/shokohsc/gohls/blob/master/LICENSE.txt)

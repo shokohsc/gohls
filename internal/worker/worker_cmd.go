@@ -6,7 +6,7 @@ import (
 	"io"
 	"os/exec"
 
-	"github.com/shimberger/gohls/internal/cmdutil"
+	"github.com/shokohsc/gohls/internal/cmdutil"
 )
 
 type CommandWorker struct {

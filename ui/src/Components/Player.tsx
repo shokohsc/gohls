@@ -18,6 +18,10 @@ import CircularProgress from '@mui/material/CircularProgress';
 import AppBar from '@mui/material/AppBar';
 import ListMessage from '../Presentation/ListMessage';
 
+import '@silvermine/videojs-chromecast/dist/silvermine-videojs-chromecast.css';
+require("@silvermine/videojs-chromecast")(videojs);
+// require("@silvermine/videojs-chromecast")(videojs, { preloadWebComponents: true });
+
 const titleStyles = {
 	flexGrow: 1,
 	marginLeft: '24px'
@@ -209,6 +213,10 @@ export default function Player(props) {
 	}, [path])
 
 	const videoJsOptions = { // lookup the options in the docs for more options
+		plugins: {
+			chromecast: {}
+		},
+		techOrder: [ 'chromecast', 'html5' ],
 		autoplay: true,
 		controls: true,
 		responsive: true,

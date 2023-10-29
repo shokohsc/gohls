@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/shimberger/gohls/internal/hls"
+	"github.com/shokohsc/gohls/internal/hls"
 	log "github.com/sirupsen/logrus"
 )
 

@@ -1,0 +1,95 @@
+apiVersion: skaffold/v4beta6
+kind: Config
+metadata:
+  name: gohls
+build:
+  artifacts:
+    - image: shokohsc/gohls
+      context: .
+      sync:
+        manual:
+          - src: main.go
+            dest: .
+          - src: '**/*.go'
+            dest: .
+      docker:
+        dockerfile: Dockerfile
+manifests:
+  kustomize:
+    paths:
+      - k8s/base
+deploy:
+  kubectl: {}
+profiles:
+  - name: dev
+    activation:
+      - command: dev
+    build:
+      artifacts:
+        - image: shokohsc/gohls
+          sync:
+            manual:
+              - src: main.go
+                dest: .
+              - src: '**/*.go'
+                dest: .
+          docker:
+            dockerfile: Dockerfile.dev
+  - name: shokohsc
+    build:
+      artifacts:
+        - image: shokohsc/gohls
+          sync:
+            manual:
+              - src: main.go
+                dest: .
+              - src: '**/*.go'
+                dest: .
+          kaniko:
+            cache:
+              repo: shokohsc/gohls
+            dockerfile: Dockerfile.dev
+      cluster:
+        dockerConfig:
+          secretName: kaniko-secret
+        namespace: kaniko
+        pullSecretName: kaniko-secret
+        resources:
+          limits:
+            cpu: "2"
+            memory: 2Gi
+          requests:
+            cpu: "1"
+            memory: 1Gi
+    manifests:
+      kustomize:
+        paths:
+          - k8s/overlays/shokohsc
+    deploy:
+      kubectl: {}
+  - name: prod
+    build:
+      artifacts:
+        - image: shokohsc/gohls
+          kaniko:
+            buildArgs:
+              VERSION: "0.1.0"
+            cache:
+              repo: shokohsc/gohls
+            dockerfile: Dockerfile
+      cluster:
+        dockerConfig:
+          secretName: kaniko-secret
+        namespace: kaniko
+        pullSecretName: kaniko-secret
+        resources:
+          limits:
+            cpu: "2"
+            memory: 2Gi
+          requests:
+            cpu: "1"
+            memory: 1Gi
+    manifests:
+      kustomize:
+        paths:
+          - k8s/overlays/shokohsc

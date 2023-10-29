@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi"
-	"github.com/shimberger/gohls/internal/fileindex"
-	"github.com/shimberger/gohls/internal/hls"
+	"github.com/shokohsc/gohls/internal/fileindex"
+	"github.com/shokohsc/gohls/internal/hls"
 	log "github.com/sirupsen/logrus"
 )
 

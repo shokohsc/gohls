@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -xeuo pipefail
 
 export VERSION=$1
 export TIME=$(date +%s)
@@ -9,12 +9,12 @@ if [ -z "$VERSION" ]; then
 	exit 1
 fi
 
-cd ui/src && npm run build && cd ../../
+cd ui/src && npm i && npm run build && cd ../../
 
 rm -rf build
 mkdir build
 
-go generate github.com/shimberger/gohls/internal/api
+go generate github.com/shokohsc/gohls/internal/api
 
 function make_release() {
 	NAME=$1
@@ -36,9 +36,9 @@ function make_release() {
 	cd ../../
 }
 
-make_release "osx" "darwin" "amd64" ""
-make_release "osx-arm64" "darwin" "arm64" ""
-make_release "linux-386" "linux" "386" ""
+# make_release "osx" "darwin" "amd64" ""
+# make_release "osx-arm64" "darwin" "arm64" ""
+# make_release "linux-386" "linux" "386" ""
 make_release "linux-amd64" "linux" "amd64" ""
 make_release "linux-arm64" "linux" "arm64" ""
-make_release "windows-amd64" "windows" "amd64" ".exe"
+# make_release "windows-amd64" "windows" "amd64" ".exe"

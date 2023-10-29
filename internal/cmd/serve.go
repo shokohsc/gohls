@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/shimberger/gohls/internal/api"
-	"github.com/shimberger/gohls/internal/config"
-	"github.com/shimberger/gohls/internal/hls"
+	"github.com/shokohsc/gohls/internal/api"
+	"github.com/shokohsc/gohls/internal/config"
+	"github.com/shokohsc/gohls/internal/hls"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
@@ -17,7 +17,7 @@ var (
 
 func init() {
 	rootCmd.AddCommand(serveCmd)
-	serveCmd.Flags().StringVarP(&listen, "listen", "l", "127.0.0.1:8080", "The address to listen on (default is 127.0.0.1:8080)")
+	serveCmd.Flags().StringVarP(&listen, "listen", "l", "0.0.0.0:8080", "The address to listen on (default is 127.0.0.1:8080)")
 }
 
 var serveCmd = &cobra.Command{
